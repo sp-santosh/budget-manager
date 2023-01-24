@@ -1,3 +1,5 @@
+import 'package:budget_manager/screenUI/calendar.dart';
+import 'package:budget_manager/screenUI/dashboard.dart';
 import 'package:budget_manager/screenUI/manage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +17,7 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  String page = 'Grey';
+  String page = 'Dashboard';
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +29,16 @@ class _homeState extends State<home> {
       bottomNavigationBar: PandaBar(
         buttonData: [
           PandaBarButtonData(
-            id: 'Blue',
+            id: 'Dashboard',
             icon: Icons.dashboard,
             title: 'Dashboard',
           ),
-          PandaBarButtonData(id: 'Green', icon: Icons.book, title: 'Dashboard'),
+          PandaBarButtonData(
+              id: 'Calendar', icon: Icons.calendar_month, title: 'Calendar'),
           PandaBarButtonData(
               id: 'Red', icon: Icons.account_balance_wallet, title: 'Red'),
           PandaBarButtonData(
-              id: 'Yellow', icon: Icons.settings, title: 'Manage'),
+              id: 'Manage', icon: Icons.settings, title: 'Manage'),
         ],
         onChange: (id) {
           setState(() {
@@ -64,14 +67,14 @@ class _homeState extends State<home> {
       body: Builder(
         builder: (context) {
           switch (page) {
-            case 'Green':
-            // return Container(color: Colors.green.shade500);
-            case 'Blue':
-              return Container(color: Colors.blue.shade900);
+            case 'Calendar':
+              return Caldr();
+            case 'Dashboard':
+              return Dashboard();
             case 'Red':
               return Container(color: Colors.red.shade900);
-            case 'Yellow':
-              return Yellow();
+            case 'Manage':
+              return Manage();
             //return Container(color: Colors.yellow.shade700);
             default:
               return Container();

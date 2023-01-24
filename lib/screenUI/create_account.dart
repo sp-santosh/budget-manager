@@ -28,11 +28,13 @@ class _CreateAccountState extends State<CreateAccount> {
               width: MediaQuery.of(context).size.width / 2,
               child: TextField(
                 controller: _emailController,
-                decoration: const InputDecoration(hintText: 'Email'),
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), hintText: 'Email'),
               ),
             ),
             const SizedBox(
-              height: 30.0,
+              height: 40.0,
+              width: 50,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width / 2,
@@ -40,6 +42,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 controller: _passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   hintText: 'Password',
                 ),
               ),
@@ -47,7 +50,7 @@ class _CreateAccountState extends State<CreateAccount> {
             const SizedBox(
               height: 30.0,
             ),
-            ElevatedButton(
+            OutlinedButton(
               onPressed: () async {
                 final message = await AuthService().registration(
                   email: _emailController.text,
