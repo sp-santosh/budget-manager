@@ -116,9 +116,7 @@ class Manage extends StatelessWidget {
                     title: "Change email",
                   ),
                   SettingsItem(
-                    onTap: () async {
-                      await AuthService().deleteUser(email, password);
-                    },
+                    onTap: () async {},
                     icons: CupertinoIcons.delete_solid,
                     title: "Delete account",
                     titleStyle: TextStyle(

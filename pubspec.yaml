@@ -44,6 +44,10 @@ dependencies:
   pandabar: ^0.1.2
   babstrap_settings_screen: ^0.1.3
   flutter_neat_and_clean_calendar: ^0.3.13+28
+  sensors_plus: ^2.0.1
+  shimmer: ^2.0.0
+  dropdownfield: ^1.0.3
+
 
 dev_dependencies:
   flutter_test:
